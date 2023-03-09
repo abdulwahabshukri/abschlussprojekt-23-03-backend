@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+  <head>
+    <title>Formular mit Bootstrap</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- Bootstrap CSS -->
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- LOGO Oben Links -->
+    <div class="container mt-4">
+      <div class="row">
+        <div class="col-md-3">
+          <img src="logo.jpg" alt="Logo">
+        </div>
+    <!-- Schrift unter Logo -->
+    <div class="container text-left">
+      <div class="row row-cols-2">
+      <h2>Personaldaten Allgemein</h2>
+
+    <!-- Beginn des Formulars --> 
+          <form>
+
+         <!-- Momnentan nicht Relevant -->
+        <div class="form-group">
+          <label for="eingabe-personalnummer">Personalnummer überprüfen:</label>
+          <input type="text" class="form-control" id="eingabe-personalnummer" placeholder="Personalnummer eingeben">
+          <button type="button" class="btn btn-primary" id="btnPersonalnummerPruefen">Personalnummer überprüfen</button>
+        </div>
+        <div class="form-group">
+          <label for="ausgabe-personalnummer">Personalnummer-Informationen:</label>
+          <input type="text" class="form-control" id="ausgabe-personalnummer" readonly>
+        </div>
+        <!--Bis hier und ab hier Relevant -->
+
+        
+     <!-- 
+        Eingabefeld Personalnummer
+        ID : personalnummer
+     -->
+        <div class="form-group">
+          <label for="personalnummer">Personalnummer:</label>
+          <input type="text" class="form-control" id="personalnummer" placeholder="Personalnummer" required>
+        </div>
+    
+        <h2>Angabe zur Person</h2>
+
+     <!-- 
+        Eingabefeld Anrede
+        ID : anrede
+     -->
+        <div class="form-group">
+          <label for="anrede">Anrede:</label>
+          <input type="text" class="form-control" id="anrede" placeholder="Herr/Frau" required>
+        </div>
+     <!-- 
+        Eingabefeld Vorname
+        ID : vorname
+     -->
+        <div class="form-group">
+          <label for="vorname">Vorname:</label>
+          <input type="text" class="form-control" id="vorname" placeholder="Vorname eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Nachname
+        ID : nachname
+     -->
+        <div class="form-group">
+          <label for="nachname">Nachname:</label>
+          <input type="text" class="form-control" id="nachname" placeholder="Nachname eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Geburtsdatum
+        ID : geburtsdatum
+     -->
+        <div class="form-group">
+          <label for="geburtsdatum">Geburtsdatum:</label>
+          <input type="date" class="form-control" id="geburtsdatum" required>
+        </div>
+     <!-- 
+        Eingabefeld Staatsangehörigkeit
+        ID : staatsangehörigkeit
+     -->
+        <div class="form-group">
+          <label for="staatsangehoerigkeit">Staatsangehörigkeit:</label>
+          <input type="text" class="form-control" id="staatsangehörigkeit" placeholder="Staatsangehörigkeit eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Geschlecht
+        ID : geschlecht
+     -->
+        <div class="form-group">
+          <label for="geschlecht">Geschlecht:</label>
+          <select class="form-control" id="geschlecht" required>
+            <option value="männlich">männlich</option>
+            <option value="weiblich">weiblich</option>
+            <option value="divers">divers</option>
+          </select>
+        </div>
+    
+        <h2>Kontakt Informationen</h2>
+
+     <!-- 
+        Eingabefeld E-Mail
+        ID : email
+     -->
+        <div class="form-group">
+          <label for="email">E-Mail:</label>
+          <input type="email" class="form-control" id="email" placeholder="E-Mail eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Telefon
+        ID : telefon
+     -->
+        <div class="form-group">
+          <label for="telefon">Telefon:</label>
+          <input type="text" class="form-control" id="telefon" placeholder="Telefonnummer eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Straße/Hausnummer
+        ID : strasse
+     -->
+        <div class="form-group">
+          <label for="strasse">Straße/Hausnummer:</label>
+          <input type="text" class="form-control" id="strasse" placeholder="Straße/Hausnummer eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld PLZ
+        ID : plz
+     -->
+        <div class="form-group">
+          <label for="plz">PLZ:</label>
+          <input type="text" class="form-control" id="plz" placeholder="PLZ eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Wohnort
+        ID : wohnort
+     -->
+        <div class="form-group">
+          <label for="wohnort">Wohnort:</label>
+          <input type="text" class="form-control" id="wohnort" placeholder="Wohnort eingeben" required>
+        </div>
+     <!-- 
+        Eingabefeld Kontoinhaber
+        ID : kontoinhaber
+     -->
+
+        <h2>Bankverbindung</h2>
+    
+     <!-- 
+        Eingabefeld Kreditinstituts
+        ID :  kreditinstituts
+     -->
+        <div class="form-group">
+          <label for="kontoinhaber">Kontoinhaber:</label>
+          <input type="text" class="form-control" id="kontoinhaber" placeholder="Kontoinhaber:" required>
+        </div>
+     <!-- 
+        Eingabefeld IBAN
+        ID : iban
+     -->
+        <div class="form-group">
+          <label for="iban">IBAN:</label>
+          <input type="text" class="form-control" id="iban" placeholder="IBAN:" required>
+        </div>
+     <!-- 
+        Eingabefeld Kreditinstituts
+        ID :  kreditinstituts
+     -->
+        <div class="form-group">
+          <label for="name des kreditinstituts">Name des Kreditinstituts:</label>
+          <input type="text" class="form-control" id="kreditinstitut" placeholder="Name des Kreditinstituts:" required>
+        </div>
+
+        <h2>Lohnsteuer</h2>
+
+     <!-- 
+        Eingabefeld Steueridentifikationsnummer
+        ID :  steueridentifikationsnummer
+     -->    
+        <div class="form-group">
+          <label for="steueridentifikationsnummer">Steueridentifikationsnummer:</label>
+          <input type="text" class="form-control" id="steueridentifikationsnummer" placeholder="Steueridentifikationsnummer:" required>
+        </div>
+     <!-- 
+        Eingabefeld Steuerklasse
+        ID :  steuerklasse
+     -->
+        <div class="form-group">
+          <label for="steuerklasse">Steuerklasse:</label>
+          <input type="text" class="form-control" id="steuerklasse" placeholder="Steuerklasse:" required>
+        </div>
+     <!-- 
+        Eingabefeld Sozialversicherung
+        ID :  sozialversicherung
+     -->
+
+        <h2>Sozialversicherung</h2>
+
+     <!-- 
+        Eingabefeld Krankenkasse
+        ID :  krankenkasse
+     -->
+        <div class="form-group">
+          <label for="krankenkasse">Krankenkasse:</label>
+          <input type="text" class="form-control" id="krankenkasse" placeholder="Krankenkasse:" required>
+        </div>
+     <!-- 
+        Eingabefeld Versicherungsnummer (RV-Nummer)
+        ID :  versicherungsnummer
+     -->
+        <div class="form-group">
+          <label for="versicherungsnummer">Versicherungsnummer (RV-Nummer):</label>
+          <input type="text" class="form-control" id="versicherungsnummer" placeholder="Versicherungsnummer (RV-Nummer):" required>
+        </div>
+        
+        <h2>Personalabteilung</h2>
+        
+     <!-- 
+        Eingabefeld Beginn der Beschätigung 
+        ID :  beginn
+     -->
+        <div class="form-group">
+          <label for="beginn">Beginn der Beschäftigung:</label>
+          <input type="text" class="form-control" id="beginn" placeholder="Beginn der Beschäftigung:" required>
+        </div>
+     <!-- 
+        Eingabefeld Berufsbezeichnung
+        ID :  berufsbezeichnung
+     -->
+        <div class="form-group">
+          <label for="berufsbezeichnung">Berufsbezeichnung:</label>
+          <input type="text" class="form-control" id="berufsbezeichnung" placeholder="Berufsbezeichnung:" required>
+        </div>
+     <!-- 
+        Eingabefeld Abteilung
+        ID :  abteilung
+     -->
+        <div class="form-group">
+          <label for="abteilung">Abteilung:</label>
+          <input type="text" class="form-control" id="abteilung" placeholder="Abteilung:" required>
+        </div>
+
+     <!-- 
+        BUTTION "Datein Speicher"
+     -->
+        <div class="float-left">
+            <button type="submit" class="btn btn-primary">Daten Speichern</button>
+            </div>  
+     
+    <!-- Ende Formular-->
+        </form>
+    
+    </div>
+    </div>
+      </div>
+    </div>
+  </body>
+</html>
