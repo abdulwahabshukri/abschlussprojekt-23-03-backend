@@ -13,8 +13,7 @@
 <!-- die JS Datei für die Ueberpruefung der eingabefelder-->
    <script src="/backend/checkInput.js"></script>
 
-<!-- die JS Datei für das Speichern der CSV Datei-->
-<script src="/backend/saveCSV.js"></script>
+
 
 <!-- die JS Datei für das einlesen und Ausgeben der Daten-->
 <script src="/backend/readCSV.js"></script>
@@ -34,7 +33,7 @@
       <h2>Personaldaten Allgemein</h2>
 
     <!-- Beginn des Formulars --> 
-          <form>
+          <form id="myForm">
 
          <!-- Momnentan nicht Relevant -->
         <div class="form-group">
@@ -94,7 +93,7 @@
         </div>
      <!-- 
         Eingabefeld Staatsangehörigkeit
-        ID : staatsangehörigkeit
+        ID : staatsangehoerigkeit
      -->
         <div class="form-group">
           <label for="staatsangehoerigkeit">Staatsangehörigkeit:</label>
@@ -155,25 +154,23 @@
           <label for="wohnort">Wohnort:</label>
           <input type="text" class="form-control" id="wohnort" placeholder="Wohnort eingeben" required>
         </div>
-     <!-- 
-        Eingabefeld Kontoinhaber
-        ID : kontoinhaber
-     -->
+    
 
         <h2>Bankverbindung</h2>
-    
-     <!-- 
-        Eingabefeld Kreditinstituts
-        ID :  kreditinstituts
-     -->
+   
+      <!-- 
+        Eingabefeld Kontoinhaber
+        ID : kontoinhaber
+       -->
+
         <div class="form-group">
           <label for="kontoinhaber">Kontoinhaber:</label>
           <input type="text" class="form-control" id="kontoinhaber" placeholder="Kontoinhaber:" required>
         </div>
-     <!-- 
+      <!-- 
         Eingabefeld IBAN
         ID : iban
-     -->
+      -->
         <div class="form-group">
           <label for="iban">IBAN:</label>
           <input type="text" class="form-control" id="iban" placeholder="IBAN:" required>
@@ -260,11 +257,14 @@
         BUTTION "Datein Speicher"
      -->
         <div class="float-left">
-            <button type="submit" class="btn btn-primary">Daten Speichern</button>
+            <button type="submit" class="btn btn-primary" >Daten Speichern</button>
             </div>  
      
     <!-- Ende Formular-->
         </form>
+
+   <!-- die JS Datei für das Speichern der CSV Datei-->
+      <script src="/backend/saveCSV.js"></script>
     
     </div>
     </div>
