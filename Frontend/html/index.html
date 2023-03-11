@@ -19,14 +19,7 @@
 
 </head>
 
-<!-- die JS Datei für die Ueberpruefung der eingabefelder-->
-<script src="/backend/checkInput.js"></script>
-
-<!-- die JS Datei für das einlesen und Ausgeben der Daten-->
-<script src="/backend/readCSV.js"></script>
-
- <!-- die JS Datei für das Speichern der CSV Datei-->
- <script src="/backend/saveCSV.js"></script>
+ 
 
 <body>
   <div class="container mt-6 mx-auto">
@@ -229,7 +222,7 @@
         </div>
         <div class="float-left">
           <!-- Button zum übertragen der Daten an die CSV-Datei -->
-          <button type="submit" class="btn btn-primary">Daten Speichern</button>
+          <button type="submit" class="btn btn-primary" id="savedata">Daten Speichern</button>
         </div>
       </form>
     </div>
@@ -245,10 +238,11 @@
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
     integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
     crossorigin="anonymous"></script>
+
+    <!-- JS from Backend-->
+   <!-- die JS Datei für das Speichern der CSV Datei-->
+ <script src="/backend/saveCSV.js"></script>
+ 
 </body>
 
 </html>
-
-
-
-    
