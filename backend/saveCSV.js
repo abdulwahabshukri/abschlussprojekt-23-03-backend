@@ -3,6 +3,7 @@
 function saveToCSV(){
 
 // Auf den Inhalt der Eingabefelder mit get.ElementById zugreifen  
+const personalnr = document.getElementById('personalnummer').value;
 const anrede = document.getElementById('anrede').value;
 const vorname = document.getElementById('vorname').value;
 const nachname = document.getElementById('nachname').value;
@@ -27,10 +28,12 @@ const berufsbezeichnung = document.getElementById('berufsbezeichnung').value;
 const abteilung = document.getElementById('abteilung').value;
 
 
-/////////////
 
-const csvContent = "Anrede,Vorname,Nachname,Geburtsdatum,Geschlecht,Staatsangehoerigkeit,E-mail,Telefon,Straße,PLZ,Wohnort,Bundesland,Kontoinhaber,Iban,Kreditinstitut,SteuerID,Steuerklasse,Krankenkasse,Verischerungsnummer,beginn,Berufsbezeichnung,Abteilung\n" + // Die erste Zeile enthält die Spaltenüberschriften
-                    `${anrede},${vorname},${nachname},${bday},
+// Anlegen der inhalte der EIngabefelder
+
+
+const csvContent = "Personalnummer,Anrede,Vorname,Nachname,Geburtsdatum,Geschlecht,Staatsangehoerigkeit,E-mail,Telefon,Straße,PLZ,Wohnort,Bundesland,Kontoinhaber,Iban,Kreditinstitut,SteuerID,Steuerklasse,Krankenkasse,Verischerungsnummer,beginn,Berufsbezeichnung,Abteilung\n" + // Die erste Zeile enthält die Spaltenüberschriften
+                    `${personalnr},${anrede},${vorname},${nachname},${bday},
                      ${geschlecht},${staatsangehoerigkeit},${email},${telefon},
                      ${strasse},${plz},${wohnort},${bundesland},
                      ${kontoinhaber},${iban},${kreditinstitut},${steuerid},
