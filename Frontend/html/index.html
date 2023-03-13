@@ -222,7 +222,7 @@
         </div>
         <div class="float-left">
           <!-- Button zum übertragen der Daten an die CSV-Datei -->
-          <button type="submit" class="btn btn-primary" id="savedata">Daten Speichern</button>
+          <button type="button" onclick="saveToCSV()" class="btn btn-primary" id="savedata">Daten Speichern</button>
         </div>
       </form>
     </div>
@@ -240,9 +240,10 @@
     crossorigin="anonymous"></script>
 
     <!-- JS from Backend-->
-   <!-- die JS Datei für das Speichern der CSV Datei-->
- <script src="/backend/saveCSV.js"></script>
- 
+  
 </body>
+
+ <!-- die JS Datei für das Speichern der CSV Datei-->
+ <script src="/backend/saveCSV.js"></script>
 
 </html>
