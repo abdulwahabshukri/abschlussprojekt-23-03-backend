@@ -1,6 +1,8 @@
+///// Funktion zum schreiben und Herunterladen der CSV Datei ////////////////
 
 // Funktion zum Schreiben der CSV Datei
 function saveToCSV(){
+
 
 // Auf den Inhalt der Eingabefelder mit get.ElementById zugreifen  
 const personalnr = document.getElementById('personalnummer').value;
@@ -10,7 +12,7 @@ const nachname = document.getElementById('nachname').value;
 const bday = document.getElementById('geburtsdatum').value;
 const geschlecht = document.getElementById('geschlecht').value;
 const staatsangehoerigkeit = document.getElementById('staatsangehoerigkeit').value;
-const email = document.getElementById('email');
+const email = document.getElementById('email').value;
 const telefon = document.getElementById('telefon').value;
 const strasse = document.getElementById('strasse').value;
 const plz = document.getElementById('plz').value;
@@ -29,7 +31,7 @@ const abteilung = document.getElementById('abteilung').value;
 
 
 
-// Anlegen der inhalte der EIngabefelder
+// Anlegen der inhalte der Eingabefelder
 
 
 const csvContent = "Personalnummer,Anrede,Vorname,Nachname,Geburtsdatum,Geschlecht,Staatsangehoerigkeit,E-mail,Telefon,Straße,PLZ,Wohnort,Bundesland,Kontoinhaber,Iban,Kreditinstitut,SteuerID,Steuerklasse,Krankenkasse,Verischerungsnummer,beginn,Berufsbezeichnung,Abteilung\n" + // Die erste Zeile enthält die Spaltenüberschriften
@@ -52,4 +54,31 @@ a.href = URL.createObjectURL(csvFile);
 a.download = "daten.csv";
 a.click();
 
+}
+
+///// Funktion zum speichern in die Vorhandene Datei ////////////////////
+
+
+function writeToCSV(formInputs) {
+  // Öffnen Sie die CSV-Datei und fügen Sie die neuesten Einträge hinzu
+
+  fs.appendFile('path/data.csv', formInputs, function(err) {
+    if (err) throw err;
+    console.log('Eingabe erfolgreich in die CSV-Datei geschrieben.');
+  });
+}
+
+// Sammelt die eingaben und speichert in die CSV datei
+function submitForm() {
+  const form = document.getElementById("my-form");
+  const formData = new FormData(form);
+
+  let formValues = '';
+  for (let [key, value] of formData.entries()) { 
+    formValues += value + ',';
+  }
+  // Entfernt das letzte Komma-Zeichen am Ende des Strings
+  formValues = formValues.slice(0, -1)
+
+  writeToCSV(formValues);
 }
