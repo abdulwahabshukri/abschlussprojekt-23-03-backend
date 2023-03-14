@@ -1,8 +1,16 @@
-FROM nginx:1.11-alpine
+# Basis-Image
+FROM nginx:latest
 
-COPY /Frontend//html/index.html /usr/share/nginx/html
-COPY /backend/checkInput.js /usr/share/nginx/html
-COPY /backend/readCSV.js /usr/share/nginx/html
-COPY /backend/saveCSV.js /usr/share/nginx/html
+# Setze den Arbeitsverzeichnis auf das Nginx-Web-Root
 
-EXPOSE 3000
+WORKDIR /usr/share/nginx/html
+
+# Kopiere den Inhalt des aktuellen Verzeichnisses in das Arbeitsverzeichnis
+
+COPY . .
+
+# Exponiere den Port 80
+EXPOSE 80
+
+# Starte den Nginx-Server
+CMD ["nginx", "-g", "daemon off;"]
