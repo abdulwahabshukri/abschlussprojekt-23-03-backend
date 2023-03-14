@@ -9,3 +9,7 @@
     
 13.03.2023
     Die JS Datei zum schreiben der Eingabefelder in die CSV Datei fertiggestellt
+
+14.03.2023
+    docker Container bereitgestellt und versucht die Daten in die Vorhandede CSV-Datei rein zu schreiben und auslesen, aber ohne erfolg. 
+    
