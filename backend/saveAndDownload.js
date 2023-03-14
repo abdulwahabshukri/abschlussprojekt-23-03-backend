@@ -3,13 +3,11 @@
 // Funktion zum Schreiben der CSV Datei
 function saveToCSV(){
 
-
 // Auf den Inhalt der Eingabefelder mit get.ElementById zugreifen  
 const personalnr = document.getElementById('personalnummer').value;
 const anrede = document.getElementById('anrede').value;
 const vorname = document.getElementById('vorname').value;
 const nachname = document.getElementById('nachname').value;
-const bday = document.getElementById('geburtsdatum').value;
 const geschlecht = document.getElementById('geschlecht').value;
 const staatsangehoerigkeit = document.getElementById('staatsangehoerigkeit').value;
 const email = document.getElementById('email').value;
@@ -30,23 +28,16 @@ const berufsbezeichnung = document.getElementById('berufsbezeichnung').value;
 const abteilung = document.getElementById('abteilung').value;
 
 
-
 // Anlegen der inhalte der Eingabefelder
 
-
-const csvContent = "Personalnummer,Anrede,Vorname,Nachname,Geburtsdatum,Geschlecht,Staatsangehoerigkeit,E-mail,Telefon,Straße,PLZ,Wohnort,Bundesland,Kontoinhaber,Iban,Kreditinstitut,SteuerID,Steuerklasse,Krankenkasse,Verischerungsnummer,beginn,Berufsbezeichnung,Abteilung\n" + // Die erste Zeile enthält die Spaltenüberschriften
-                    `${personalnr},${anrede},${vorname},${nachname},${bday},
+const csvContent = "Personalnummer,Anrede,Vorname,Nachname,Geschlecht,Staatsangehoerigkeit,E-mail,Telefon,Straße,PLZ,Wohnort,Bundesland,Kontoinhaber,Iban,Kreditinstitut,SteuerID,Steuerklasse,Krankenkasse,Verischerungsnummer,beginn,Berufsbezeichnung,Abteilung\n" + // Die erste Zeile enthält die Spaltenüberschriften
+                    `${personalnr},${anrede},${vorname},${nachname},
                      ${geschlecht},${staatsangehoerigkeit},${email},${telefon},
                      ${strasse},${plz},${wohnort},${bundesland},
                      ${kontoinhaber},${iban},${kreditinstitut},${steuerid},
                      ${steuerklasse},${krankenkasse},${versicherungsnummer},${beginn},
                      ${berufsbezeichnung},${abteilung},`;
-/*                    
-var daten = [anrede,vorname,nachname,bday,geschlecht,
-            staatsangehoerigkeit,email,telefon,strasse,plz,
-            wohnort,bundesland,kontoinhaber,iban,kreditinstitut,steuerid,steuerklasse,krankenkasse,versicherungsnummer,
-            beginn,berufsbezeichnung,abteilung].join(",") + "\n";
-*/
+
 var a = document.createElement("a");
 var csvFile = new Blob([csvContent], {type: 'text/csv;charset=utf-8;'});
 
@@ -54,31 +45,4 @@ a.href = URL.createObjectURL(csvFile);
 a.download = "daten.csv";
 a.click();
 
-}
-
-///// Funktion zum speichern in die Vorhandene Datei ////////////////////
-
-
-function writeToCSV(formInputs) {
-  // Öffnen Sie die CSV-Datei und fügen Sie die neuesten Einträge hinzu
-
-  fs.appendFile('path/data.csv', formInputs, function(err) {
-    if (err) throw err;
-    console.log('Eingabe erfolgreich in die CSV-Datei geschrieben.');
-  });
-}
-
-// Sammelt die eingaben und speichert in die CSV datei
-function submitForm() {
-  const form = document.getElementById("my-form");
-  const formData = new FormData(form);
-
-  let formValues = '';
-  for (let [key, value] of formData.entries()) { 
-    formValues += value + ',';
-  }
-  // Entfernt das letzte Komma-Zeichen am Ende des Strings
-  formValues = formValues.slice(0, -1)
-
-  writeToCSV(formValues);
 }

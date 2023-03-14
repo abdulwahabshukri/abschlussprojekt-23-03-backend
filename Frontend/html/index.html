@@ -17,7 +17,6 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
-    <script src="function1.js"></script>
 </head>
 
 <body>
@@ -245,11 +244,11 @@
                 </div>
                 <div class="float-left">
                     <!-- Button zum übertragen der Daten an die CSV-Datei -->
-                    <button type="submit" class="btn btn-primary" onclick="submitForm()">Daten Speichern</button>
+                    <button type="submit" class="btn btn-primary" onclick="addToCSV()">Daten Speichern</button>
                 </div>
                 <div class="float-right ml-2">
                     <!-- Button zum Herunterladen der Datei -->
-                    <a href="data.csv" type="button" download class="btn btn-primary" onclick="saveToCSV()">Datei Herunterladen</a>
+                    <button type="button" class="btn btn-primary" onclick="saveToCSV()">Datei Herunterladen</a>
                 </div>
             </form>
         </div>
@@ -264,10 +263,14 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
-</body>
-      <!-- die JS Datei für das Speichern der CSV Datei-->
-      <script src="/backend/saveCSV.js"></script>
 
+
+     <!-- die JS Datei für das Speichern und downloaden der CSV Datei-->
+    <script src="/backend/saveAndDownload.js"></script>   
+     <!-- die JS Datei für das Speichern in die CSV Datei ohne download-->
+    <script src="/backend/saveAndWrite.js"></script>
+
+</body>   
 </html>
 
  
