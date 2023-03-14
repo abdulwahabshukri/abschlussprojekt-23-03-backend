@@ -2,11 +2,7 @@
     Diese Datei ist dafür da um in die CSV Datei zu schreiben
 */
 
-import path from 'path';
-
-const fs = require("fs");
-const path = require("path");
-const csv = require("csv-parser");
+import { appendFileSync, appendFile } from "fs";
 
 
 function addToCSV(){
@@ -36,7 +32,7 @@ function addToCSV(){
 
 // Pfad zur CSV-Datei 
 
-const filePath = path.join(__dirname, "../data.csv");
+const filePath = path.join("./data.csv");
 
  // Neuen Eintrag in der CSV-Datei hinzufügen
 
@@ -49,9 +45,11 @@ const filePath = path.join(__dirname, "../data.csv");
 
 
 // Hier wird die Zeile in die CSV-Datei geschrieben
-fs.appendFileSync(filePath, neuerEintrag); 
+    appendFileSync(filePath, neuerEintrag); 
 
+    appendFile('data.csv', neuerEintrag, (err) => {
+    if (err) throw err;
+    alert("eintrag ok");
+})
 
-// Erfolgsmeldung anzeigen wenn eintrag gemacht
-alert("Eintrag wurde hinzugefügt!");
 }
