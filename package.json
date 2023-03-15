@@ -1,0 +1,19 @@
+{
+  "name": "deneme3git",
+  "version": "1.0.0",
+  "description": "08.03.2023\r     Ansammlung von ideen und Hilfmittel",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechstarterGmbH/abschlussprojekt-23-03-backend.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechstarterGmbH/abschlussprojekt-23-03-backend/issues"
+  },
+  "homepage": "https://github.com/TechstarterGmbH/abschlussprojekt-23-03-backend#readme"
+}
