@@ -1,9 +1,30 @@
 {
   "dependencies": {
-    "csv-writer": "^1.6.0"
+    "csv": "^6.2.8",
+    "csv-writer": "^1.6.0",
+    "express": "^4.18.2",
+    "fs": "^0.0.1-security"
   },
   "devDependencies": {
     "webpack": "^5.76.1",
     "webpack-cli": "^5.0.1"
-  }
+  },
+  "name": "abschlussprojekt",
+  "description": "08.03.2023\r     Ansammlung von ideen und Hilfmittel",
+  "version": "1.0.0",
+  "main": "test.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/TechstarterGmbH/abschlussprojekt-23-03-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/TechstarterGmbH/abschlussprojekt-23-03-backend/issues"
+  },
+  "homepage": "https://github.com/TechstarterGmbH/abschlussprojekt-23-03-backend#readme"
 }

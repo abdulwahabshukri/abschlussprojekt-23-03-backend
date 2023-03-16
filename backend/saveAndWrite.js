@@ -1,7 +1,39 @@
 /*
     Diese Datei ist dafür da um in die CSV Datei zu schreiben
 */
+function addToCSV(){
 
+const express = require("express");
+const csvWriter = require('csv-write-stream')
+const fs = require('fs');
+const app = express();
+
+app.use(express.urlencoded({ extended: true }));
+
+// GET-Methode zum Anzeigen des HTML-Formulars
+app.get("/", (req, res) => {
+    res.sendFile(__dirname + "../index.html");
+});
+
+// POST-Methode zum Speichern der Daten in CSV-Datei
+app.post("/", (req, res) => {
+    const writer = csvWriter({sendHeaders: false})
+    writer.pipe(fs.createWriteStream('daten.csv', {flags: 'a'}))
+    writer.write([req.body.vorname, req.body.nachname, req.body.bday])
+    writer.end()
+    res.send("Daten wurden erfolgreich gespeichert.");
+});
+
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+    console.log(`Server ist bereit auf Port ${PORT}`);
+});
+
+}
+
+
+
+/*
 import { appendFileSync, appendFile } from "fs";
 
 
@@ -53,3 +85,4 @@ const filePath = path.join("./data.csv");
 })
 
 }
+*/
