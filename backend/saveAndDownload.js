@@ -45,4 +45,24 @@ a.href = URL.createObjectURL(csvFile);
 a.download = "daten.csv";
 a.click();
 
+ // Senden von Daten an den Node.js-Server mit Abruf
+ fetch('/saveToCSV', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json',              
+    },
+    body: JSON.stringify(csvContent)
+
+})
+    .then(response => response.json())
+    .then(data => {
+        if (data.success) {
+            alert('Daten erfolgreich gespeichert !');
+        } else {
+            alert('Beim Speichern der Daten ist ein Fehler aufgetreten.');
+        }
+    })
+    .catch(error => console.error(error));
+
+
 }

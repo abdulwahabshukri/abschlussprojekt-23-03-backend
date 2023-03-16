@@ -28,7 +28,7 @@
         </div>
         <div class="col-mt-6 mx-auto">
             <h1>Personalverwaltungssystem</h1>
-            <form action="/" method="POST" id="my-form">
+            <form action="/enregistrer-donnees" method="POST">
                 <!-- Überprüfen ob die Personalnummer schon vorhanden ist -->
                 <div class="form-group">
                     <label for="eingabe-personalnummer">Personalnummer:</label>
@@ -47,38 +47,35 @@
                 <!-- Personalnummer vergeben wenn noch keine vorhanden ist -->
                 <div class="form-group">
                     <label for="personalnummer">Zuteilung Personalnummer:</label>
-                    <input type="text" class="form-control" id="personalnummer" placeholder="Personalnummer" required>
+                    <input type="text" class="form-control" id="personalnummer" name="personalnummer" placeholder="Personalnummer" required>
                 </div>
                 <!-- Allgemeine Person angaben wie Anrede, Vorname, Nachname, Geburtsdatum, Geschlecht, Staatsangehörogkeit, -->
                 <h2>Angabe zur Person</h2>
                 <div class="form-group">
                     <label for="anrede">Anrede:</label>
                     <!-- Auswahlmenü Anrede -->
-                    <select class="form-control" id="anrede" required>
+                    <select class="form-control" id="anrede" name="anrede" required>
                         <option value="">Bitte wählen</option>
                         <option value="Herr">Herr</option>
                         <option value="Frau">Frau</option>
                     </select>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="vorname">Vorname:</label>
-                            <input type="text" class="form-control" id="vorname" placeholder="Vorname:" required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="nachname">Nachname:</label>
-                            <input type="text" class="form-control" id="nachname" placeholder="Nachname:" required>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="vorname">Vorname:</label>
+                    <input type="text" class="form-control" id="vorname" name="vorname" placeholder="Vorname:" required>
                 </div>
-
+                <div class="form-group">
+                    <label for="nachname">Nachname:</label>
+                    <input type="text" class="form-control" id="nachname" name="nachname" placeholder="Nachname:" required>
+                </div>
+                <div class="form-group">
+                    <label for="geburtsdatum">Geburtsdatum:</label>
+                    <input type="date" class="form-control" id="geburtsdatum" name="geburtsdatum" placeholder="Geburtsdatum" required>
+                </div>
                 <div class="form-group">
                     <label for="geschlecht">Geschlecht:</label>
                     <!-- Auswahlmenü Geschlecht -->
-                    <select class="form-control" id="geschlecht" required>
+                    <select class="form-control" id="geschlecht" name="geschlecht" required>
                         <option value="">Bitte wählen</option>
                         <option value="männlich">&#x1F468; Männlich</option>
                         <option value="weiblich">&#x1F469; Weiblich</option>
@@ -86,9 +83,9 @@
                     </select>
                 </div>
                 <div class="form-group">
-                    <label for="staatsangehörigkeit">Staatsangehörigkeit:</label>
+                    <label for="staatsangehoerigkeit">Staatsangehörigkeit:</label>
                     <!-- Auswahlmenü Staatsangehörigkeit -->
-                    <select class="form-control" id="staatsangehoerigkeit" required>
+                    <select class="form-control" id="staatsangehoerigkeit" name="staatsangehoerigkeit" required>
                         <option value="">Bitte wählen</option>
                         <option value="Austria">🇦🇹 Austria</option>
                         <option value="Belgium">🇧🇪 Belgium</option>
@@ -123,44 +120,28 @@
                 <h2>Kontakt Informationen</h2>
                 <div class="form-group">
                     <label for="email">E-Mail:</label>
-                    <input type="email" class="form-control" id="email" placeholder="E-Mail:" required>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="E-Mail:" required>
                 </div>
                 <div class="form-group">
                     <label for="telefon">Telefonnummer:</label>
-                    <input type="text" class="form-control" id="telefon" placeholder="Telefonnummer:" required>
+                    <input type="text" class="form-control" id="telefon" name="telefon" placeholder="Telefonnummer:" required>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="strasse">Straße:</label>
-                            <input type="text" class="form-control" id="strasse" placeholder="Straße:" required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="hausnummer">Hausnummer:</label>
-                            <input type="text" class="form-control" id="hausnummer" placeholder="Hausnummer:" required>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="strasse">Straße/Hausnummer:</label>
+                    <input type="text" class="form-control" id="strasse" name="strasse" placeholder="Straße/Hausnummer:" required>
                 </div>
-                <div class="row">
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="plz">PLZ:</label>
-                            <input type="text" class="form-control" id="plz" placeholder="PLZ:" required>
-                        </div>
-                    </div>
-                    <div class="col">
-                        <div class="form-group">
-                            <label for="wohnort">Wohnort:</label>
-                            <input type="text" class="form-control" id="wohnort" placeholder="Wohnort:" required>
-                        </div>
-                    </div>
+                <div class="form-group">
+                    <label for="plz">PLZ:</label>
+                    <input type="text" class="form-control" id="plz" name="plz" placeholder="PLZ:" required>
+                </div>
+                <div class="form-group">
+                    <label for="wohnort">Wohnort:</label>
+                    <input type="text" class="form-control" id="wohnort" name="wohnort" placeholder="Wohnort:" required>
                 </div>
                 <div class="form-group">
                     <label for="bundesländer">Bundesland:</label>
                     <!-- Auswahlmenü Bundesland -->
-                    <select class="form-control" id="bundesland" required>
+                    <select class="form-control" id="bundesland" name="bundesland" required>
                         <option value="">Bitte wählen</option>
                         <option value="Baden-Württemberg">Baden-Württemberg</option>
                         <option value="Bayern">Bayern</option>
@@ -184,74 +165,77 @@
                 <h2>Bankverbindung</h2>
                 <div class="form-group">
                     <label for="kontoinhaber">Kontoinhaber:</label>
-                    <input type="text" class="form-control" id="kontoinhaber" placeholder="Kontoinhaber:" required>
+                    <input type="text" class="form-control" id="kontoinhaber" name="kontoinhaber" placeholder="Kontoinhaber:" required>
                 </div>
                 <div class="form-group">
                     <label for="iban">IBAN:</label>
-                    <input type="text" class="form-control" id="iban" placeholder="IBAN:" required>
+                    <input type="text" class="form-control" id="iban" name="iban" placeholder="IBAN:" required>
                 </div>
                 <div class="form-group">
                     <label for="name des kreditinstituts">Name des Kreditinstituts:</label>
-                    <input type="text" class="form-control" id="kreditinstitut" placeholder="Name des Kreditinstituts:"
+                    <input type="text" class="form-control" id="kreditinstitut" name="kreditinstitut" placeholder="Name des Kreditinstituts:"
                         required>
                 </div>
                 <!-- Lohnsteuer wie Steueridentifikationsnummer, Steuerklasse -->
                 <h2>Lohnsteuer</h2>
                 <div class="form-group">
                     <label for="steueridentifikationsnummer">Steueridentifikationsnummer:</label>
-                    <input type="text" class="form-control" id="steueridentifikationsnummer"
+                    <input type="text" class="form-control" id="steueridentifikationsnummer" name="steueridentifikationsnummer"
                         placeholder="Steueridentifikationsnummer:" required>
                 </div>
                 <div class="form-group">
                     <label for="steuerklasse">Steuerklasse:</label>
                     <!-- Auswahlmenü Steuerklasse-->
-                    <select class="form-control" id="steuerklasse" required>
+                    <select class="form-control" id="steuerklasse" name="steuerklasse" required>
                         <option value="">Bitte wählen</option>
-                        <option value="1">I</option>
-                        <option value="2">II</option>
-                        <option value="3">III</option>
-                        <option value="4">IV</option>
-                        <option value="5">V</option>
-                        <option value="6">VI</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
                     </select>
                 </div>
                 <!-- Sozialversicherung wie Krankenkasse, Versicherungsnummer(RV-Nummer) -->
                 <h2>Sozialversicherung</h2>
                 <div class="form-group">
                     <label for="krankenkasse">Krankenkasse:</label>
-                    <input type="text" class="form-control" id="krankenkasse" placeholder="Krankenkasse:" required>
+                    <input type="text" class="form-control" id="krankenkasse" name="krankenkasse" placeholder="Krankenkasse:" required>
                 </div>
                 <div class="form-group">
                     <label for="versicherungsnummer">Versicherungsnummer (RV-Nummer):</label>
-                    <input type="text" class="form-control" id="versicherungsnummer"
+                    <input type="text" class="form-control" id="versicherungsnummer" name="versicherungsnummer"
                         placeholder="Versicherungsnummer (RV-Nummer):" required>
                 </div>
                 <!-- Personalabteilung wie Beginn der Beschäftigung, Berufsbezeichnung, Abteilung -->
                 <h2>Personalabteilung</h2>
                 <div class="form-group">
                     <label for="beginn">Beginn der Beschäftigung:</label>
-                    <input type="date" class="form-control" id="beginn" placeholder="Beginn der Beschäftigung:"
+                    <input type="date" class="form-control" id="beginn" name="beginn" placeholder="Beginn der Beschäftigung:"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="berufsbezeichnung">Berufsbezeichnung:</label>
-                    <input type="text" class="form-control" id="berufsbezeichnung" placeholder="Berufsbezeichnung:"
+                    <input type="text" class="form-control" id="berufsbezeichnung" name="berufsbezeichnung" placeholder="Berufsbezeichnung:"
                         required>
                 </div>
                 <div class="form-group">
                     <label for="abteilung">Abteilung:</label>
-                    <input type="text" class="form-control" id="abteilung" placeholder="Abteilung:" required>
+                    <input type="text" class="form-control" id="abteilung" name="abteilung" placeholder="Abteilung:" required>
                 </div>
                 <div class="float-left">
                     <!-- die JS Datei für das Speichern in die CSV Datei ohne download-->
-                   <script src="/backend/saveAndWrite.js"></script>
+                   <script src="saveAndWrite.js"></script>
                     <!-- Button zum übertragen der Daten an die CSV-Datei -->
-                    <button type="submit" class="btn btn-primary" onclick="addToCSV()">Daten Speichern</button>
+                    <button type="submit" class="btn btn-primary" onclick="enregistrerDonnees()">Daten Speichern</button>
                 </div>
                 <div class="float-right ml-2">
+                    <!-- die JS Datei für das Speichern in die CSV Datei ohne download-->
+                   <script src="saveAndDownload.js"></script>
                     <!-- Button zum Herunterladen der Datei -->
                     <button type="button" class="btn btn-primary" onclick="saveToCSV()">Datei Herunterladen</button>
                 </div>
+
             </form>
         </div>
     </div>
@@ -266,11 +250,6 @@
         integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
         crossorigin="anonymous"></script>
 
+</body>
 
-     <!-- die JS Datei für das Speichern und downloaden der CSV Datei-->
-    <script src="/backend/saveAndDownload.js"></script>   
-     
-</body>   
 </html>
-
- 
