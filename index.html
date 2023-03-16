@@ -17,33 +17,22 @@
         integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <link href="css/bootstrap.min.css" rel="stylesheet">
+    
 </head>
 
-<body>
+<body style="display: flex; flex-direction: column; align-items: center; justify-content: center;">
+    <a href="startseite.html"><div style="position: absolute; top: 10px; right: 10px; color:#A6F1C2;">Zurück</div></a>
+    <h1>Personalverwaltung</h1>
     <div class="container mt-6 mx-auto">
         <div class="row">
             <div class="col-md-4 mx-auto">
                 <img src="logo.jpg" alt="Logo">
             </div>
         </div>
+        <p></p>
         <div class="col-mt-6 mx-auto">
-            <h1>Personalverwaltungssystem</h1>
             <form action="/enregistrer-donnees" method="POST">
-                <!-- Überprüfen ob die Personalnummer schon vorhanden ist -->
-                <div class="form-group">
-                    <label for="eingabe-personalnummer">Personalnummer:</label>
-                    <input type="text" class="form-control" id="eingabe-personalnummer"
-                        placeholder="Personalnummer eingeben:">
-                    <!-- Button zum überprüfen der CSV-Datei ob die Personalnummer vorhanden ist und wenn  ja dann ausgeben der Daten -->
-                    <button type="button" class="btn btn-primary" id="btnPersonalnummerPruefen">Personalnummer
-                        überprüfen</button>
-                </div>
-                <div class="form-group">
-                    <label for="ausgabe-personalnummer"></label>
-                    <!-- Größen verstellbare Textarea -->
-                    <textarea class="form-control" id="ausgabe-personalnummer" placeholder="Ausgabe-Personaldaten"
-                        readonly></textarea>
-                </div>
+               
                 <!-- Personalnummer vergeben wenn noch keine vorhanden ist -->
                 <div class="form-group">
                     <label for="personalnummer">Zuteilung Personalnummer:</label>
@@ -60,18 +49,21 @@
                         <option value="Frau">Frau</option>
                     </select>
                 </div>
-                <div class="form-group">
-                    <label for="vorname">Vorname:</label>
-                    <input type="text" class="form-control" id="vorname" name="vorname" placeholder="Vorname:" required>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="vorname">Vorname:</label>
+                            <input type="text" class="form-control" id="vorname" name="vorname" placeholder="Vorname:" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="nachname">Nachname:</label>
+                            <input type="text" class="form-control" id="nachname" name="nachname" placeholder="Nachname:" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="nachname">Nachname:</label>
-                    <input type="text" class="form-control" id="nachname" name="nachname" placeholder="Nachname:" required>
-                </div>
-                <div class="form-group">
-                    <label for="geburtsdatum">Geburtsdatum:</label>
-                    <input type="date" class="form-control" id="geburtsdatum" name="geburtsdatum" placeholder="Geburtsdatum" required>
-                </div>
+
                 <div class="form-group">
                     <label for="geschlecht">Geschlecht:</label>
                     <!-- Auswahlmenü Geschlecht -->
@@ -126,17 +118,33 @@
                     <label for="telefon">Telefonnummer:</label>
                     <input type="text" class="form-control" id="telefon" name="telefon" placeholder="Telefonnummer:" required>
                 </div>
-                <div class="form-group">
-                    <label for="strasse">Straße/Hausnummer:</label>
-                    <input type="text" class="form-control" id="strasse" name="strasse" placeholder="Straße/Hausnummer:" required>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="strasse">Straße:</label>
+                            <input type="text" class="form-control" id="strasse" name="strasse" placeholder="Straße:" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="hausnummer">Hausnummer:</label>
+                            <input type="text" class="form-control" id="hausnummer" name="hausnummer" placeholder="Hausnummer:" required>
+                        </div>
+                    </div>
                 </div>
-                <div class="form-group">
-                    <label for="plz">PLZ:</label>
-                    <input type="text" class="form-control" id="plz" name="plz" placeholder="PLZ:" required>
-                </div>
-                <div class="form-group">
-                    <label for="wohnort">Wohnort:</label>
-                    <input type="text" class="form-control" id="wohnort" name="wohnort" placeholder="Wohnort:" required>
+                <div class="row">
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="plz">PLZ:</label>
+                            <input type="text" class="form-control" id="plz" name="plz" placeholder="PLZ:" required>
+                        </div>
+                    </div>
+                    <div class="col">
+                        <div class="form-group">
+                            <label for="wohnort">Wohnort:</label>
+                            <input type="text" class="form-control" id="wohnort" name="wohnort" placeholder="Wohnort:" required>
+                        </div>
+                    </div>
                 </div>
                 <div class="form-group">
                     <label for="bundesländer">Bundesland:</label>
@@ -188,12 +196,12 @@
                     <!-- Auswahlmenü Steuerklasse-->
                     <select class="form-control" id="steuerklasse" name="steuerklasse" required>
                         <option value="">Bitte wählen</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
+                        <option value="1">I</option>
+                        <option value="2">II</option>
+                        <option value="3">III</option>
+                        <option value="4">IV</option>
+                        <option value="5">V</option>
+                        <option value="6">VI</option>
                     </select>
                 </div>
                 <!-- Sozialversicherung wie Krankenkasse, Versicherungsnummer(RV-Nummer) -->
@@ -224,18 +232,13 @@
                     <input type="text" class="form-control" id="abteilung" name="abteilung" placeholder="Abteilung:" required>
                 </div>
                 <div class="float-left">
-                    <!-- die JS Datei für das Speichern in die CSV Datei ohne download-->
-                   
                     <!-- Button zum übertragen der Daten an die CSV-Datei -->
                     <button type="submit" class="btn btn-primary" onclick="enregistrerDonnees()">Daten Speichern</button>
                 </div>
                 <div class="float-right ml-2">
-                    <!-- die JS Datei für das Speichern in die CSV Datei ohne download-->
-                   
                     <!-- Button zum Herunterladen der Datei -->
                     <button type="button" class="btn btn-primary" onclick="window.location.href='/telecharger-donnees'">Datei Herunterladen</button>
                 </div>
-
             </form>
         </div>
     </div>
