@@ -9,6 +9,8 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(bodyParser.urlencoded({ extended: true }));
 
+//für die css Datei
+app.use(express.static(__dirname));
 
 
 app.get('/', (req,res) => {
