@@ -13,3 +13,6 @@
 14.03.2023
     docker Container bereitgestellt und versucht die Daten in die Vorhandede CSV-Datei rein zu schreiben und auslesen, aber ohne erfolg. 
     
+15.03.2023 
+    Meetings mit den jeweiligen Teams abgehalten. Jenkins als Test eingerichtet 
+ 
