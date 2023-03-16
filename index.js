@@ -12,6 +12,7 @@ function enregistrerDonnees(event) {
     const email = document.getElementById("email").value;      
     const telefon = document.getElementById("telefon").value;
     const strasse = document.getElementById("strasse").value;
+    const hausnummer = document.getElementById("hausnummer").value;
     const plz = document.getElementById("plz").value;
     const wohnort = document.getElementById("wohnort").value;  
     const bundesland = document.getElementById("bundesland").value;
@@ -26,16 +27,6 @@ function enregistrerDonnees(event) {
     const berufsbezeichnung = document.getElementById("berufsbezeichnung").value;
     const abteilung = document.getElementById("abteilung").value;
   
-  
-   /* // Überprüfung von Formularfeldern
-    if (personalnummer === '' || anrede === '' || vorname === ''  ||  nachname === '' || geburtsdatum === '' || geschlecht === '' || staatsangehoerigkeit === ''
-        || email === '' || telefon === '' || strasse === '' || plz === '' || wohnort === '' || bundesland === '' || kontoinhaber === '' || iban === '' || kreditinstitut === ''
-        || steueridentifikationsnummer === '' || steuerklasse === '' || krankenkasse === '' || versicherungsnummer === '' || beginn === ''
-        || berufsbezeichnung === '' || abteilung === '') {
-        alert('Bitte füllen Sie alle Felder des Formulars aus');
-        return;
-    }*/
-  
     // Erstellen eines Objekts mit Formulardaten
     const donnees = {
         personalnummer: personalnummer,
@@ -48,6 +39,7 @@ function enregistrerDonnees(event) {
         email: email,                        
         telefon: telefon,
         strasse: strasse,
+        hausnummer: hausnummer,
         plz: plz,
         wohnort: wohnort,
         bundesland: bundesland,
@@ -83,3 +75,5 @@ function enregistrerDonnees(event) {
         })
         .catch(error => console.error(error));
   }
+  
+  
