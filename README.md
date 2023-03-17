@@ -15,4 +15,7 @@
     
 15.03.2023 
     Meetings mit den jeweiligen Teams abgehalten. Jenkins als Test eingerichtet 
+   
+16.03.2023
+    CSV Datei -Funktion fertiggestellt, und auf webserver hochgeladen . 
  
