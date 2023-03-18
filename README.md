@@ -3,6 +3,7 @@
 
 09.03.2023
 <<<<<<< HEAD
+<<<<<<< HEAD
     
 =======
     JS Datei angelegt , Dockerfile erstellt und Container getestet 
@@ -23,3 +24,10 @@
     CSV Datei -Funktion fertiggestellt, und auf webserver hochgeladen . 
  
 >>>>>>> 10a20553372a445079561b6ff61b90fec49404cb
+=======
+    JS Datei angelegt , Dockerfile erstellt und Container getestet 
+    
+10.03.2023
+    
+    
+>>>>>>> 58369669ea56312c327df92aaf4f08c85d4d8ac9
