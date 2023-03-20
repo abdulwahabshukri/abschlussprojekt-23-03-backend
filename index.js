@@ -5,8 +5,7 @@ function enregistrerDonnees(event) {
     const personalnummer = document.getElementById("personalnummer").value; 
     const anrede = document.getElementById("anrede").value;
     const vorname = document.getElementById("vorname").value;
-    const nachname = document.getElementById("nachname").value;
-    const geburtsdatum = document.getElementById("geburtsdatum").value;
+    const nachname = document.getElementById("nachname").value;    
     const geschlecht = document.getElementById("geschlecht").value;
     const staatsangehoerigkeit = document.getElementById("staatsangehoerigkeit").value; 
     const email = document.getElementById("email").value;      
@@ -32,8 +31,7 @@ function enregistrerDonnees(event) {
         personalnummer: personalnummer,
         anrede: anrede,
         vorname: vorname,
-        nachname: nachname,
-        geburtsdatum: geburtsdatum,
+        nachname: nachname,        
         geschlecht: geschlecht,
         staatsangehoerigkeit: staatsangehoerigkeit,
         email: email,                        
@@ -75,5 +73,4 @@ function enregistrerDonnees(event) {
         })
         .catch(error => console.error(error));
   }
-  
   
