@@ -18,4 +18,10 @@
    
 16.03.2023
     CSV Datei -Funktion fertiggestellt, und auf webserver hochgeladen . 
+   
+17.03.2023
+    weiter am projekt gearbeitet
+
+20.03.2023
+   csv fixed. speichern und herunterladen funktioniert.
  
