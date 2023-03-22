@@ -5,10 +5,11 @@ function enregistrerDonnees(event) {
     const personalnummer = document.getElementById("personalnummer").value; 
     const anrede = document.getElementById("anrede").value;
     const vorname = document.getElementById("vorname").value;
-    const nachname = document.getElementById("nachname").value;
+    const nachname = document.getElementById("nachname").value;    
     const geschlecht = document.getElementById("geschlecht").value;
     const staatsangehoerigkeit = document.getElementById("staatsangehoerigkeit").value; 
     const email = document.getElementById("email").value;      
+    const laendercodes = document.getElementById("laendercodes").value;
     const telefon = document.getElementById("telefon").value;
     const strasse = document.getElementById("strasse").value;
     const hausnummer = document.getElementById("hausnummer").value;
@@ -31,10 +32,11 @@ function enregistrerDonnees(event) {
         personalnummer: personalnummer,
         anrede: anrede,
         vorname: vorname,
-        nachname: nachname,
+        nachname: nachname,        
         geschlecht: geschlecht,
         staatsangehoerigkeit: staatsangehoerigkeit,
-        email: email,                        
+        email: email,   
+        laendercodes : laendercodes,                
         telefon: telefon,
         strasse: strasse,
         hausnummer: hausnummer,
@@ -73,5 +75,4 @@ function enregistrerDonnees(event) {
         })
         .catch(error => console.error(error));
   }
-  
   
