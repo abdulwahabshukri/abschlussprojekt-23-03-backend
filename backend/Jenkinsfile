@@ -9,7 +9,7 @@ pipeline {
         }
         stage('Push to Docker Registry') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'backend-test1', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
+                withCredentials([usernamePassword(credentialsId: 'backend-test', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
                     sh 'docker login -u $USERNAME -p $PASSWORD'
                     sh 'docker push amirmohammadi60/backend-test .'
                 }
