@@ -1,30 +1,31 @@
 pipeline {
     agent any
 
-     stages {
+    stages {
         stage('Build') {
             steps {
-                sh 'docker build -t amirmohammadi60/backend-test .'
+              sh '''
+                docker build -t amirmohammadi60/backend-ap:v.0.-${GITHUB_RUN_ID} .
+              '''
             }
         }
-        stage('Push to Docker Registry') {
+        stage('Release') {
             steps {
-                withCredentials([usernamePassword(credentialsId: 'backend-test', passwordVariable: 'PASSWORD', usernameVariable: 'USERNAME')]) {
-                    sh 'docker login -u $USERNAME -p $PASSWORD'
-                    sh 'docker push amirmohammadi60/backend-test .'
-                }
-             
-             }
-        }
-        stage('Deploy') {
-            steps {
-                  
+              withCredentials([usernamePassword(credentialsId: 'backend-test', usernameVariable: 'USERNAME', passwordVariable: 'PASSWORD')]) {
                 sh '''
-                docker stop backend-test || true 
-                docker rm -f backend-test || true 
-                docker run -d -p 8080:80 --name backend-test amirmohammadi60/backend-test .'
+                docker login -u $USERNAME -p $PASSWORD
+                docker push amirmohammadi60/backend-ap:v.0.-${GITHUB_RUN_ID}
                 '''
-                 
+              }
+            }
+        }
+        stage('deploy') {
+            steps {
+                sh '''
+                docker stop backend-ap || true
+                docker rm -f backend-ap || true
+                docker run -p4000:80 -v /home/deploy/data.csv:/app/data.csv -d --name backend-ap amirmohammadi60/backend-ap:v.0.-${GITHUB_RUN_ID}
+                '''
             }
         }
     }
