@@ -8,7 +8,8 @@ function enregistrerDonnees(event) {
     const nachname = document.getElementById("nachname").value;    
     const geschlecht = document.getElementById("geschlecht").value;
     const staatsangehoerigkeit = document.getElementById("staatsangehoerigkeit").value; 
-    const email = document.getElementById("email").value;      
+    const email = document.getElementById("email").value;
+    const laendercodes = document.getElementById("laendercodes").value;      
     const telefon = document.getElementById("telefon").value;
     const strasse = document.getElementById("strasse").value;
     const hausnummer = document.getElementById("hausnummer").value;
@@ -34,7 +35,8 @@ function enregistrerDonnees(event) {
         nachname: nachname,        
         geschlecht: geschlecht,
         staatsangehoerigkeit: staatsangehoerigkeit,
-        email: email,                        
+        email: email,
+        laendercodes: laendercodes,                     
         telefon: telefon,
         strasse: strasse,
         hausnummer: hausnummer,

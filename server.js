@@ -52,7 +52,7 @@ app.post('/enregistrer-donnees', (req, res) => {
         if (err == null) {
             console.log('Datei existiert');
             // Schreiben von Daten in eine CSV-Datei
-            const ligne = `${donnees.personalnummer};${donnees.anrede};${donnees.vorname};${donnees.nachname};${donnees.geschlecht};${donnees.staatsangehoerigkeit};${donnees.email};${donnees.telefon};${donnees.strasse};${donnees.hausnummer};${donnees.plz};${donnees.wohnort};${donnees.bundesland};${donnees.kontoinhaber};${donnees.iban};${donnees.kreditinstitut};${donnees.steueridentifikationsnummer};${donnees.steuerklasse};${donnees.krankenkasse};${donnees.versicherungsnummer};${donnees.beginn};${donnees.berufsbezeichnung};${donnees.abteilung};\n`;
+            const ligne = `${donnees.personalnummer};${donnees.anrede};${donnees.vorname};${donnees.nachname};${donnees.geschlecht};${donnees.staatsangehoerigkeit};${donnees.email};${laendercodes};${donnees.telefon};${donnees.strasse};${donnees.hausnummer};${donnees.plz};${donnees.wohnort};${donnees.bundesland};${donnees.kontoinhaber};${donnees.iban};${donnees.kreditinstitut};${donnees.steueridentifikationsnummer};${donnees.steuerklasse};${donnees.krankenkasse};${donnees.versicherungsnummer};${donnees.beginn};${donnees.berufsbezeichnung};${donnees.abteilung};\n`;
             fs.appendFile('donnees.csv', ligne, (err) => {
                 if (err) {
                     console.error(err);
@@ -64,8 +64,8 @@ app.post('/enregistrer-donnees', (req, res) => {
         } else if (err.code === 'ENOENT') {
             console.log('Datei existiert nicht');
             // Header und Daten in eine CSV-Datei schreiben
-            const enTete = 'Personalnummer;Anrede;Vorname;Nachname;Geschlecht;Staatsangehoerigkeit;E-mail;Telefon;Strasse;Hausnummer;Plz;Wohnort;Bundesland;Kontoinhaber;Iban;Kreditinstitut;Steueridentifikationsnummer;Steuerklasse;Krankenkasse;Versicherungsnummer;Beginn;Berufsbezeichnung;Abteilung\n';
-            const ligne = `${donnees.personalnummer};${donnees.anrede};${donnees.vorname};${donnees.nachname};${donnees.geschlecht};${donnees.staatsangehoerigkeit};${donnees.email};${donnees.telefon};${donnees.strasse};${donnees.hausnummer};${donnees.plz};${donnees.wohnort};${donnees.bundesland};${donnees.kontoinhaber};${donnees.iban};${donnees.kreditinstitut};${donnees.steueridentifikationsnummer};${donnees.steuerklasse};${donnees.krankenkasse};${donnees.versicherungsnummer};${donnees.beginn};${donnees.berufsbezeichnung};${donnees.abteilung};\n`;
+            const enTete = 'Personalnummer;Anrede;Vorname;Nachname;Geschlecht;Staatsangehoerigkeit;E-mail;Ländercode;Telefon;Strasse;Hausnummer;Plz;Wohnort;Bundesland;Kontoinhaber;Iban;Kreditinstitut;Steueridentifikationsnummer;Steuerklasse;Krankenkasse;Versicherungsnummer;Beginn;Berufsbezeichnung;Abteilung\n';
+            const ligne = `${donnees.personalnummer};${donnees.anrede};${donnees.vorname};${donnees.nachname};${donnees.geschlecht};${donnees.staatsangehoerigkeit};${donnees.email};${laendercodes};${donnees.telefon};${donnees.strasse};${donnees.hausnummer};${donnees.plz};${donnees.wohnort};${donnees.bundesland};${donnees.kontoinhaber};${donnees.iban};${donnees.kreditinstitut};${donnees.steueridentifikationsnummer};${donnees.steuerklasse};${donnees.krankenkasse};${donnees.versicherungsnummer};${donnees.beginn};${donnees.berufsbezeichnung};${donnees.abteilung};\n`;
             fs.writeFile('donnees.csv', enTete + ligne, (err) => {
                 if (err) {
                     console.error(err);
