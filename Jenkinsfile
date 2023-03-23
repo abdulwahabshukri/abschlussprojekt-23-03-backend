@@ -5,7 +5,7 @@ pipeline {
         stage('Build') {
             steps {
               sh '''
-                docker build -t amirmohammadi60/backend-ap1:beap-${GITHUB_RUN_ID} .
+                sudo docker build -t amirmohammadi60/backend-ap1:beap-${GITHUB_RUN_ID} .
               '''
             }
         }
