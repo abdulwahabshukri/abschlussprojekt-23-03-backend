@@ -27,3 +27,6 @@
    
 21.03.2023 
     arbeiten an der bash Datei fürs automatische löschen und die ausgabe der CSV Datei 
+    
+22.03.2023
+    an dem backup script gearbeitet und an der Ausgabe und jenkins pipeline wobei dann alles kaputt gegangen ist 
