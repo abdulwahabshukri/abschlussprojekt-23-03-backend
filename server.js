@@ -2,6 +2,7 @@ const express = require('express');
 const app = express();
 const fs = require('fs');
 const bodyParser = require('body-parser');
+const csv = require('csv-parser');
 
 
 
@@ -48,7 +49,7 @@ app.post('/enregistrer-donnees', (req, res) => {
     }
 
 
-    fs.stat('donnees.csv', function (err, stat) {
+    fs.stat('donnees.csv', function (err) {
         if (err == null) {
             console.log('Datei existiert');
             // Schreiben von Daten in eine CSV-Datei
@@ -64,7 +65,7 @@ app.post('/enregistrer-donnees', (req, res) => {
         } else if (err.code === 'ENOENT') {
             console.log('Datei existiert nicht');
             // Header und Daten in eine CSV-Datei schreiben
-            const enTete = 'Personalnummer;Anrede;Vorname;Nachname;Geschlecht;Staatsangehoerigkeit;E-mail;Laendercode;Telefon;Strasse;Hausnummer;Plz;Wohnort;Bundesland;Kontoinhaber;Iban;Kreditinstitut;Steueridentifikationsnummer;Steuerklasse;Krankenkasse;Versicherungsnummer;Beginn;Berufsbezeichnung;Abteilung\n';
+            const enTete = 'Personalnummer;Anrede;Vorname;Nachname;Geschlecht;Staatsangehoerigkeit;E-mail;Ländercodes;Telefon;Strasse;Hausnummer;Plz;Wohnort;Bundesland;Kontoinhaber;Iban;Kreditinstitut;Steueridentifikationsnummer;Steuerklasse;Krankenkasse;Versicherungsnummer;Beginn;Berufsbezeichnung;Abteilung\n';
             const ligne = `${donnees.personalnummer};${donnees.anrede};${donnees.vorname};${donnees.nachname};${donnees.geschlecht};${donnees.staatsangehoerigkeit};${donnees.email};${donnees.laendercodes};${donnees.telefon};${donnees.strasse};${donnees.hausnummer};${donnees.plz};${donnees.wohnort};${donnees.bundesland};${donnees.kontoinhaber};${donnees.iban};${donnees.kreditinstitut};${donnees.steueridentifikationsnummer};${donnees.steuerklasse};${donnees.krankenkasse};${donnees.versicherungsnummer};${donnees.beginn};${donnees.berufsbezeichnung};${donnees.abteilung};\n`;
             fs.writeFile('donnees.csv', enTete + ligne, (err) => {
                 if (err) {
@@ -79,10 +80,52 @@ app.post('/enregistrer-donnees', (req, res) => {
             res.json({ success: false });
         }
     });
-})
+});
 
 
+// Die Informationen einer Person mit ihrer Personalnummer haben 
+app.post('/getPersonalData', (req, res) => {
+    // Holen Sie sich die vom Client gesendete Personalnummer
+    const personalnummer = req.body['eingabe-personalnummer'];
 
-app.listen(3000, () => {
-    console.log('Server auf Port 3000 gestartet.');
+    // Lesen Sie die CSV-Datei mit den persönlichen Daten
+    fs.readFile('donnees.csv', 'utf-8', (err, data) => {
+        if (err) {
+            console.error(err);
+            return res.status(500).send('Erreur serveur');
+        }
+
+        // Transformiere die CSV-Daten in ein Array von Objekten
+        const results = csvToArray(data);
+
+        // Finden Sie die Zeile, die der Personalnummer entspricht
+        const personalData = results.find((data) => data.Personalnummer === personalnummer);
+
+        if (personalData) {
+            // Wenn Daten gefunden wurden, die Daten an den Client zurücksenden
+            res.send(JSON.stringify(personalData));
+        } else {
+            // Anderenfalls einen Fehler an den Client zurückgeben
+            res.status(404).send('Personalnummer nicht gefunden');
+        }
+    });
+});
+
+// Funktion zum Umwandeln von CSV-Daten in ein Array von Objekten
+function csvToArray(data) {
+    const rows = data.trim().split('\n');
+    const headers = rows.shift().split(';');
+
+    return rows.map((row) => {
+        const values = row.split(';');
+        return headers.reduce((obj, header, index) => {
+            obj[header] = values[index];
+            return obj;
+        }, {});
+    });
+}
+
+
+app.listen(4000, () => {
+    console.log('Server auf Port 4000 gestartet.');
 });
