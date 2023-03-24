@@ -81,7 +81,32 @@ function enregistrerDonnees(event) {
 };
 
 
+// Informationen zu einer Person anhand der Personalnummer suchen mit 2 Optionen :
 
+
+// Option 1: mit Fetch
+function suchePersonal() {
+    const personalnummer = document.getElementById('eingabe-personalnummer').value;
+    fetch('/getPersonalData', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify({ 'eingabe-personalnummer': personalnummer })
+    })
+    .then(response => response.text())
+    .then(data => {
+      document.getElementById('ausgabe-personalnummer').value = data;
+    })
+    .catch(error => {
+      console.error(error);
+      document.getElementById('ausgabe-personalnummer').value = error.message;
+    });
+  }
+
+
+ // Option2 mit ajax 
+/*
 function suchePersonal() {
     const personalnummer = document.getElementById('eingabe-personalnummer').value;
     $.ajax({
@@ -95,4 +120,4 @@ function suchePersonal() {
             document.getElementById('ausgabe-personalnummer').value = xhr.responseText;
         }
     });
-}
+}*/
