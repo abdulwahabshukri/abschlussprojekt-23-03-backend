@@ -30,3 +30,10 @@
     
 22.03.2023
     an dem backup script gearbeitet und an der Ausgabe und jenkins pipeline wobei dann alles kaputt gegangen ist 
+    
+23.03.2023
+    alles funktioniert wieder nach der Installation und Neukonfiguration einer neuen VM.
+
+24.03.2023
+    suchfunktion von Info mit Personalnummer durchgeführt. Neue Design beim der Ausgabe. 
+    
