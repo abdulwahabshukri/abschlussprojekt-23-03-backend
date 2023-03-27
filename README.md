@@ -37,3 +37,6 @@
 24.03.2023
     suchfunktion von Info mit Personalnummer durchgeführt. Neue Design beim der Ausgabe. 
     
+27.03.2023
+    Sammlung vollständiger Codes. Die Fehlermeldung, wenn die Personalnummer nicht existiert, wurde geändert.
+    
