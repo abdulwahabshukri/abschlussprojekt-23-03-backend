@@ -102,7 +102,7 @@ function suchePersonal() {
   })
   .catch(error => {
     console.error(error);
-    document.getElementById('ausgabe-personalnummer').value = error.message;
+    document.getElementById('ausgabe-personalnummer').value = "Dieser Personalnummer entspricht keine Person"  //error.message;
   });
 }
 
