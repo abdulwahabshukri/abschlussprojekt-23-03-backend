@@ -136,3 +136,10 @@ form button[type="submit"] {
     display: flex;
     flex-direction: column;
 }
+
+#ausgabe-personalnummer {
+
+    height: 600px;
+
+    width: 500px;
+  }
