@@ -24,7 +24,7 @@ pipeline {
                 sh '''
                 docker stop backend-ap || true
                 docker rm -f backend-ap || true
-                docker run -p4000:80 -v /home/deploy/data.csv:/app/data.csv -d --name backend-ap amirmohammadi60/abschlussprijekt-backend:v-1.0.${BUILD_NUMBER}
+                docker run -p4000:80  -d --name backend-ap amirmohammadi60/abschlussprijekt-backend:v-1.0.${BUILD_NUMBER}
                 '''
             }
         }
